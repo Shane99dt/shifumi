@@ -8,6 +8,7 @@ const resultDisplay = document.getElementById("gameResult")
 const roundResultDisplay = document.getElementById("roundResult")
 const history = document.getElementById('history')
 const historyAdd = document.getElementById('historyAdd')
+const loadingGif = document.getElementById('loadingGif')
 
 
 let playerScore = 0
@@ -144,6 +145,9 @@ document.querySelector('#rock').addEventListener('click', () => {
 // // let btnScissor = document.getElementById("scissor")
 // // btnScissor.addEventListener("click", game)
 
+// // loadingGif.style.display = 'none'
+
+
 
 const possibles = document.querySelectorAll('.signs')
 possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
@@ -156,7 +160,8 @@ possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
   }else{
     player === 3
   }
-  game()
+  // game()
+  setTimeout(game,3000)
 }))
 
 // history

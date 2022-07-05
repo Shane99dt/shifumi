@@ -126,6 +126,16 @@ main .signs:hover{
 
 /* section player end */
 
+#loadingGif{
+  display: none;
+  position: absolute;
+  height: 150px;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 .sec-result{
   display: flex;
   flex-direction: column;

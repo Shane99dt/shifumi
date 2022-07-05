@@ -11,6 +11,8 @@ const resultDisplay = document.getElementById("gameResult")
 const roundResultDisplay = document.getElementById("roundResult")
 const history = document.getElementById('history')
 const historyAdd = document.getElementById('historyAdd')
+const loadingGif = document.getElementById('loadingGif')
+
 
 window.alert("Haven't constructed yet. Kindly play the 2 player game")
 
@@ -93,6 +95,17 @@ const game = () => {
   // 1/2,2/3,3/1 player won
 
 
+// function dirReduc(plan) {
+//   var opposite = {
+//     'rock': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
+//   return plan.reduce(function(dirs, dir){
+//       if (dirs[dirs.length - 1] === opposite[dir])
+//         dirs.pop();
+//       else
+//         dirs.push(dir);
+//       return dirs;
+//     }, []);
+// }
 
   if(signNum === signNum2 === signNum3 === signNum4 === playerSign){
     console.log("draw")
@@ -179,7 +192,6 @@ document.querySelector('#rock').addEventListener('click', () => {
 // // let btnScissor = document.getElementById("scissor")
 // // btnScissor.addEventListener("click", game)
 
-
 const possibles = document.querySelectorAll('.signs')
 possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
   playerSign = sign.target.id
@@ -191,7 +203,8 @@ possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
   }else{
     player === 3
   }
-  game()
+  // game()
+  setTimeout(game,3000)
 }))
 
 // history
@@ -209,61 +222,3 @@ closeHistory.addEventListener('click', function(event){
   history.style.display = 'none'
 })
 
-
-
-
-// //////////////////////////////////////////////////
-
-// // const computerChoiceDisplay = document.getElementById('computer-choice')
-// // const userChoiceDisplay = document.getElementById('user-choice')
-// // const resultDisplay = document.getElementById('result')
-// // const possibleChoices = document.querySelectorAll('button')
-// // let userChoice
-// // let computerChoice
-// // let result
-
-// // possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (element) => {
-// //   userChoice = element.target.id
-// //   userChoiceDisplay.innerHTML = userChoice
-// //   generateComputerChoice()
-// //   getResult()
-// // }))
-
-// // function generateComputerChoice() {
-// //   const randomNumber = (Math.floor(Math.random() * 3) + 1)
-// //   if (randomNumber === 1) {
-// //     computerChoice = 'rock'
-// //   }
-// //   if (randomNumber === 2) {
-// //     computerChoice = 'scissor'
-// //   }
-// //   if (randomNumber === 3) {
-// //     computerChoice = 'paper'
-// //   }
-// //   computerChoiceDisplay.innerHTML = computerChoice
-// // }
-
-// // function getResult() {
-// //   if (computerChoice === userChoice) {
-// //     result = 'its a draw!'
-// //   }
-// //   if (computerChoice === 'rock' && userChoice === "paper") {
-// //     result = 'you win!'
-// //   }
-// //   if (computerChoice === 'rock' && userChoice === "scissors") {
-// //     result = 'you lost!'
-// //   }
-// //   if (computerChoice === 'paper' && userChoice === "scissors") {
-// //     result = 'you win!'
-// //   }
-// //   if (computerChoice === 'paper' && userChoice === "rock") {
-// //     result = 'you lose!'
-// //   }
-// //   if (computerChoice === 'scissors' && userChoice === "rock") {
-// //     result = 'you win!'
-// //   }
-// //   if (computerChoice === 'scissors' && userChoice === "paper") {
-// //     result = 'you lose!'
-// //   }
-// //   resultDisplay.innerHTML = result
-// // }
