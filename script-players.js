@@ -4,34 +4,17 @@ const Scissor = document.getElementById("scissor")
 const scorePlayerDisplay = document.getElementById("score-player")
 const scoreComputerDisplay = document.getElementById("score-computer")
 const computerChoiceDisplay = document.getElementById("computerChoice")
+const computerChoiceDisplay2 = document.getElementById("computerChoice2")
+const computerChoiceDisplay3 = document.getElementById("computerChoice3")
+const computerChoiceDisplay4 = document.getElementById("computerChoice4")
 const resultDisplay = document.getElementById("result")
 
 let playerScore = 0
 let computerScore = 0
 
-// // const playerSignGenerator = () => {
-// //   const playerSign = 0
-// //   if (rock.clicked == true){
-// //     console.log(playerSign)
-// //     return playerSign === 1
-// //   }
-
-// //   if(paper.clicked == true){
-// //     console.log(playerSign)
-// //     return playerSign === 2
-// //   }
-
-// //   if(scissor.clicked == true){
-// //     console.log(playerSign)
-// //     return playerSign === 3
-// //   }
-// // }
-
-
-
 const computer = () => {
   const signNum =  Math.floor(Math.random() * 3) + 1;
-let compSign
+  let compSign
   if(signNum === 1){
     compSign = 'rock'
   }else if(signNum === 2){
@@ -40,6 +23,42 @@ let compSign
     compSign = 'scissor'
   }
   return compSign
+}
+const computer2 = () => {
+  const signNum =  Math.floor(Math.random() * 3) + 1;
+  let compSign2
+  if(signNum === 1){
+    compSign2 = 'rock'
+  }else if(signNum === 2){
+    compSign2 = 'paper'
+  }else{
+    compSign2 = 'scissor'
+  }
+  return compSign2
+}
+const computer3 = () => {
+  const signNum =  Math.floor(Math.random() * 3) + 1;
+  let compSign3
+  if(signNum === 1){
+    compSign3 = 'rock'
+  }else if(signNum === 2){
+    compSign3 = 'paper'
+  }else{
+    compSign3 = 'scissor'
+  }
+  return compSign3
+}
+const computer4 = () => {
+  const signNum =  Math.floor(Math.random() * 3) + 1;
+  let compSign4
+  if(signNum === 1){
+    compSign4 = 'rock'
+  }else if(signNum === 2){
+    compSign4 = 'paper'
+  }else{
+    compSign4 = 'scissor'
+  }
+  return compSign4
 }
 
 const resetValues = () => {
@@ -52,15 +71,26 @@ const resetValues = () => {
 
 const game = () => {
   const signNum = computer()
+  const signNum2 = computer2()
+  const signNum3 = computer3()
+  const signNum4 = computer4()
   computerChoiceDisplay.innerHTML = `${signNum}`
   console.log(playerSign, signNum)
 
   // signNum / playerSign
-  // 1/1,2/2,3/3 draw
-  // 2/1,3/2,1/3 computer won
-  // 1/2,2/3,3/1 player won
+  // function dirReduc(plan) {
+  //   var opposite = {
+  //     'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
+  //   return plan.reduce(function(dirs, dir){
+  //       if (dirs[dirs.length - 1] === opposite[dir])
+  //         dirs.pop();
+  //       else
+  //         dirs.push(dir);
+  //       return dirs;
+  //     }, []);
+  // }
 
-  if(signNum === playerSign){
+  if(signNum === playerSign === signNum2 === signNum3 === signNum4){
     console.log("draw")
     resultDisplay.innerHTML = ""
   }else if(signNum == 'paper' && playerSign == 'rock' || signNum == 'scissor' && playerSign == 'paper' || signNum == 'rock' && playerSign == 'scissor' ){
@@ -102,7 +132,7 @@ const game = () => {
 // // btnScissor.addEventListener("click", game)
 
 
-const possibles = document.querySelectorAll('.signs')
+const possibles = document.querySelectorAll('button')
 possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
   playerSign = sign.target.id
   let player

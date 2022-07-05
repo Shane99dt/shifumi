@@ -49,9 +49,6 @@ nav a{
   font-size: 15px;
 }
 
-
-/* section player start */
-
 .sec-player{
   display: flex;
   flex-direction: row;
@@ -66,66 +63,17 @@ nav a{
   gap: 10px;
 }
 
-main button{
-  height: 3.5em;
-  width: 5em;
-  background: #444;
-  border:  none;
-  border-top: 3px solid orange;
-  border-radius: 0 0 0.2em 0.2em;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  transform-origin: 50% 5em;
-  /* animation property */
-}
-
-main button:hover{
-  animation: wiggle 2s linear infinite;
-}
-
-@keyframes wiggle {
-  0%, 7%{
-    transform: rotateZ(0);
-  }
-  15%{
-    transform: rotateZ(-15deg);
-  }
-  20%{
-    transform: rotateZ(10deg);
-  }
-  25%{
-    transform: rotateZ(-10deg);
-  }
-  30%{
-    transform: rotateZ(6deg);
-  }
-  35%{
-    transform: rotateZ(-4deg);
-  }
-  40%{
-    transform: rotateZ(0);
-  }
-}
-
-/* section player end */
-
 .sec-result{
+  padding-left: 40px;
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 
-.result-message{
-  height: 250px;
-  width: 350px;
-  display: block;
-  background-color: #444;
-  border: 5px solid green;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.secc-result h2{
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
 }
