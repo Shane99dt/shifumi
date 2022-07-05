@@ -114,7 +114,6 @@ possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
     player === 3
   }
   game()
-  setInterval($(this).click, 500);
 }))
 
 
