@@ -66,7 +66,20 @@ nav a{
   gap: 10px;
 }
 
-main button{
+.sec-player img{
+  border-radius: 5px;
+
+}
+
+.sec-player img:hover{
+  transform: scale(1.2);
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+}
+
+
+
+main .signs{
   height: 3.5em;
   width: 5em;
   background: #444;
@@ -80,7 +93,7 @@ main button{
   /* animation property */
 }
 
-main button:hover{
+main .signs:hover{
   animation: wiggle 2s linear infinite;
 }
 
@@ -116,6 +129,10 @@ main button:hover{
   padding-top: 30px;
   align-items: center;
   gap: 20px;
+}
+
+.sec-result{
+  font-size: 20px;
 }
 
 .result-message{
