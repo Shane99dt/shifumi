@@ -42,6 +42,13 @@ let compSign
   return compSign
 }
 
+const resetValues = () => {
+  scoreComputerDisplay.innerHTML = `0`
+  scorePlayerDisplay.innerHTML = `0`
+  computerScore = 0
+  playerScore = 0
+}
+
 
 const game = () => {
   const signNum = computer()
@@ -58,13 +65,10 @@ const game = () => {
     resultDisplay.innerHTML = ""
   }else if(signNum == 'paper' && playerSign == 'rock' || signNum == 'scissor' && playerSign == 'paper' || signNum == 'rock' && playerSign == 'scissor' ){
     computerScore ++
-    if(computerScore >= 5){
+    if(computerScore === 3){
       alert('You lost ! Restart')
       resultDisplay.innerHTML = "You Lost !"
-      computerScore = 0
-      playerScore = 0
-      scoreComputerDisplay.innerHTML = `0`
-      scorePlayerDisplay.innerHTML = `0`
+      resetValues()
     }else{
       resultDisplay.innerHTML = ""
       scoreComputerDisplay.innerHTML = `${computerScore}`
@@ -72,13 +76,10 @@ const game = () => {
     }
   }else{
     playerScore ++
-    if(playerScore >= 5){
+    if(playerScore === 3){
       alert('You win ! Restart')
       resultDisplay.innerHTML = "You win !"
-      scoreComputerDisplay.innerHTML = `0`
-      scorePlayerDisplay.innerHTML = `0`
-      computerScore = 0
-      playerScore = 0
+      resetValues()
     }else{
       resultDisplay.innerHTML = ""
       console.log("player won", playerScore)
@@ -113,6 +114,7 @@ possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
     player === 3
   }
   game()
+  setInterval($(this).click, 500);
 }))
 
 
