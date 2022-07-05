@@ -9,6 +9,8 @@ const computerChoiceDisplay3 = document.getElementById("computerChoice3")
 const computerChoiceDisplay4 = document.getElementById("computerChoice4")
 const resultDisplay = document.getElementById("result")
 
+window.alert("Haven't constructed yet. Kindly play the 2 player game")
+
 let playerScore = 0
 let computerScore = 0
 

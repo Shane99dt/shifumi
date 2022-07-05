@@ -4,7 +4,11 @@ const Scissor = document.getElementById("scissor")
 const scorePlayerDisplay = document.getElementById("score-player")
 const scoreComputerDisplay = document.getElementById("score-computer")
 const computerChoiceDisplay = document.getElementById("computerChoice")
-const resultDisplay = document.getElementById("result")
+const resultDisplay = document.getElementById("gameResult")
+const roundResultDisplay = document.getElementById("roundResult")
+const history = document.getElementById('history')
+const historyAdd = document.getElementById('historyAdd')
+
 
 let playerScore = 0
 let computerScore = 0
@@ -47,14 +51,16 @@ const resetValues = () => {
   scorePlayerDisplay.innerHTML = `0`
   computerScore = 0
   playerScore = 0
+  count = 0
 }
 
+let count = 0
 
 const game = () => {
   const signNum = computer()
   computerChoiceDisplay.innerHTML = `${signNum}`
   console.log(playerSign, signNum)
-
+  count++
   // signNum / playerSign
   // 1/1,2/2,3/3 draw
   // 2/1,3/2,1/3 computer won
@@ -63,31 +69,72 @@ const game = () => {
   if(signNum === playerSign){
     console.log("draw")
     resultDisplay.innerHTML = ""
+    roundResultDisplay.innerHTML = "Tie"
+    historyAdd.innerHTML += `
+        <article>
+          <h2>Round ${count}</h2>
+          <p>Tie !</p>
+        </article><br>
+      `
   }else if(signNum == 'paper' && playerSign == 'rock' || signNum == 'scissor' && playerSign == 'paper' || signNum == 'rock' && playerSign == 'scissor' ){
     computerScore ++
     if(computerScore === 3){
       alert('You lost ! Restart')
-      resultDisplay.innerHTML = "You Lost !"
+      resultDisplay.innerHTML = "You Lost the game!"
+      historyAdd.innerHTML += `
+        <article>
+          <h2>Round ${count}</h2>
+          <p>Point for computer</p>
+          <h2>Computer won the game</h2>
+        </article><br><br>
+      `
       resetValues()
     }else{
       resultDisplay.innerHTML = ""
+      roundResultDisplay.innerHTML = "Point for computer !"
       scoreComputerDisplay.innerHTML = `${computerScore}`
       console.log("computer won", computerScore)
+      historyAdd.innerHTML += `
+        <article>
+          <h2>Round ${count}</h2>
+          <p>Point for computer</p>
+        </article><br>
+      `
     }
   }else{
     playerScore ++
     if(playerScore === 3){
       alert('You win ! Restart')
-      resultDisplay.innerHTML = "You win !"
+      resultDisplay.innerHTML = "You win the game!"
+      historyAdd.innerHTML += `
+        <article>
+          <h2>Round ${count}</h2>
+          <p>Point for player</p>
+          <h2>Player won the game</h2>
+        </article><br><br>
+      `
       resetValues()
     }else{
       resultDisplay.innerHTML = ""
+      roundResultDisplay.innerHTML = "Point for you !"
       console.log("player won", playerScore)
       scorePlayerDisplay.innerHTML = `${playerScore}`
+      historyAdd.innerHTML += `
+        <article>
+          <h2>Round ${count}</h2>
+          <p>Point for player</p>
+        </article><br>
+      `
     }
   }
 }
 
+// button clicks css
+
+document.querySelector('#rock').addEventListener('click', () => {
+  document.querySelector('#rock').classList.add('myClass');
+});
+// button clicks css end
 
 // // let btnShoot = document.getElementsByClassName("shoot")
 // // btnShoot.addEventListener("click", game)
@@ -115,6 +162,23 @@ possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
   }
   game()
 }))
+
+// history
+
+const openHistory = document.getElementById('btnHistory')
+const closeHistory = document.getElementById("closeHistory")
+
+openHistory.addEventListener('click', function(event){
+
+  history.style.display = 'initial'
+  history.style.zIndex = 1
+})
+
+closeHistory.addEventListener('click', function(event){
+  history.style.display = 'none'
+})
+
+
 
 
 // //////////////////////////////////////////////////

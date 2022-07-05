@@ -68,7 +68,6 @@ nav a{
 
 .sec-player img{
   border-radius: 5px;
-
 }
 
 .sec-player img:hover{
@@ -96,6 +95,10 @@ main .signs{
 main .signs:hover{
   animation: wiggle 2s linear infinite;
 }
+
+/* .myClass{
+  animation: wiggle 2s linear initial;
+} */
 
 @keyframes wiggle {
   0%, 7%{
@@ -145,4 +148,48 @@ main .signs:hover{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+#history{
+  height: 350px;
+  width: 350px;
+  display: none;
+  background-color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+}
+
+#btnHistory{
+  height: 1.5em;
+  width: 5em;
+  background: #444;
+  border:  none;
+  border-radius: 0.2em;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  transform-origin: 50% 5em;
+}
+
+#historyAdd{
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+#closeHistory{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  height: 1.8em;
+  width: 5em;
+  background: #444;
+  border:  none;
+  border-radius: 0.2em;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  transform-origin: 50% 5em;
 }
