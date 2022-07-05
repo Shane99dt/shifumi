@@ -7,7 +7,7 @@ const computerChoiceDisplay = document.getElementById("computerChoice")
 const computerChoiceDisplay2 = document.getElementById("computerChoice2")
 const computerChoiceDisplay3 = document.getElementById("computerChoice3")
 const computerChoiceDisplay4 = document.getElementById("computerChoice4")
-const resultDisplay = document.getElementById("result")
+const resultDisplay = document.getElementById("gameResult")
 const roundResultDisplay = document.getElementById("roundResult")
 const history = document.getElementById('history')
 const historyAdd = document.getElementById('historyAdd')
@@ -16,10 +16,13 @@ window.alert("Haven't constructed yet. Kindly play the 2 player game")
 
 let playerScore = 0
 let computerScore = 0
+let computerScore2 = 0
+let computerScore3 = 0
+let computerScore4 = 0
 
 const computer = () => {
   const signNum =  Math.floor(Math.random() * 3) + 1;
-let compSign
+  let compSign
   if(signNum === 1){
     compSign = 'rock'
   }else if(signNum === 2){
@@ -28,6 +31,42 @@ let compSign
     compSign = 'scissor'
   }
   return compSign
+}
+const computer2 = () => {
+  const signNum =  Math.floor(Math.random() * 3) + 1;
+  let compSign2
+  if(signNum === 1){
+    compSign2 = 'rock'
+  }else if(signNum === 2){
+    compSign2 = 'paper'
+  }else{
+    compSign2 = 'scissor'
+  }
+  return compSign2
+}
+const computer3 = () => {
+  const signNum =  Math.floor(Math.random() * 3) + 1;
+  let compSign3
+  if(signNum === 1){
+    compSign3 = 'rock'
+  }else if(signNum === 2){
+    compSign3 = 'paper'
+  }else{
+    compSign3 = 'scissor'
+  }
+  return compSign3
+}
+const computer4 = () => {
+  const signNum =  Math.floor(Math.random() * 3) + 1;
+  let compSign4
+  if(signNum === 1){
+    compSign4 = 'rock'
+  }else if(signNum === 2){
+    compSign4 = 'paper'
+  }else{
+    compSign4 = 'scissor'
+  }
+  return compSign4
 }
 
 const resetValues = () => {
@@ -42,22 +81,27 @@ let count = 0
 
 const game = () => {
   const signNum = computer()
+  const signNum2 = computer2()
+  const signNum3 = computer3()
+  const signNum4 = computer4()
   computerChoiceDisplay.innerHTML = `${signNum}`
-  console.log(playerSign, signNum)
+  console.log(playerSign, signNum, signNum2, signNum3, signNum4)
   count++
   // signNum / playerSign
   // 1/1,2/2,3/3 draw
   // 2/1,3/2,1/3 computer won
   // 1/2,2/3,3/1 player won
 
-  if(signNum === playerSign){
+
+
+  if(signNum === signNum2 === signNum3 === signNum4 === playerSign){
     console.log("draw")
     resultDisplay.innerHTML = ""
     roundResultDisplay.innerHTML = "Tie"
     historyAdd.innerHTML += `
         <article>
           <h2>Round ${count}</h2>
-          <p>Both played ${signNum}</p>
+          <p>Everyone played ${signNum}</p>
           <p>Tie !</p>
         </article><br>
       `

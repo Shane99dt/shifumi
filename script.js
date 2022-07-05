@@ -55,6 +55,7 @@ const game = () => {
           <h2>Round ${count}</h2>
           <p>Both played :${signNum}</p>
           <p>Tie !</p>
+          <hr>
         </article><br>
       `
   }else if(signNum == 'paper' && playerSign == 'rock' || signNum == 'scissor' && playerSign == 'paper' || signNum == 'rock' && playerSign == 'scissor' ){
@@ -70,6 +71,7 @@ const game = () => {
           <p>Player played :${playerSign}</p>
           <p>Point for computer</p>
           <h2>Computer won the game</h2>
+          <hr><hr>
         </article><br><br>
       `
       resetValues()
@@ -84,6 +86,7 @@ const game = () => {
           <p>Computer played :${signNum}</p>
           <p>Player played :${playerSign}</p>
           <p>Point for computer</p>
+          <hr>
         </article><br>
       `
     }
@@ -100,6 +103,7 @@ const game = () => {
           <p>Player played :${playerSign}</p>
           <p>Point for player</p>
           <h2>Player won the game</h2>
+          <hr><hr>
         </article><br><br>
       `
       resetValues()
@@ -114,6 +118,7 @@ const game = () => {
           <p>Computer played :${signNum}</p>
           <p>Playerer played :${playerSign}</p>
           <p>Point for player</p>
+          <hr>
         </article><br>
       `
     }
