@@ -193,3 +193,9 @@ main .signs:hover{
   font-family: Arial, Helvetica, sans-serif;
   transform-origin: 50% 5em;
 }
+
+.history-title{
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+}

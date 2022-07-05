@@ -13,26 +13,6 @@ const historyAdd = document.getElementById('historyAdd')
 let playerScore = 0
 let computerScore = 0
 
-// // const playerSignGenerator = () => {
-// //   const playerSign = 0
-// //   if (rock.clicked == true){
-// //     console.log(playerSign)
-// //     return playerSign === 1
-// //   }
-
-// //   if(paper.clicked == true){
-// //     console.log(playerSign)
-// //     return playerSign === 2
-// //   }
-
-// //   if(scissor.clicked == true){
-// //     console.log(playerSign)
-// //     return playerSign === 3
-// //   }
-// // }
-
-
-
 const computer = () => {
   const signNum =  Math.floor(Math.random() * 3) + 1;
 let compSign
@@ -73,6 +53,7 @@ const game = () => {
     historyAdd.innerHTML += `
         <article>
           <h2>Round ${count}</h2>
+          <p>Both played :${signNum}</p>
           <p>Tie !</p>
         </article><br>
       `
@@ -80,10 +61,13 @@ const game = () => {
     computerScore ++
     if(computerScore === 3){
       alert('You lost ! Restart')
+      roundResultDisplay.innerHTML = "Point for computer !"
       resultDisplay.innerHTML = "You Lost the game!"
       historyAdd.innerHTML += `
         <article>
           <h2>Round ${count}</h2>
+          <p>Computer played :${signNum}</p>
+          <p>Player played :${playerSign}</p>
           <p>Point for computer</p>
           <h2>Computer won the game</h2>
         </article><br><br>
@@ -97,6 +81,8 @@ const game = () => {
       historyAdd.innerHTML += `
         <article>
           <h2>Round ${count}</h2>
+          <p>Computer played :${signNum}</p>
+          <p>Player played :${playerSign}</p>
           <p>Point for computer</p>
         </article><br>
       `
@@ -105,10 +91,13 @@ const game = () => {
     playerScore ++
     if(playerScore === 3){
       alert('You win ! Restart')
+      roundResultDisplay.innerHTML = "Point for you !"
       resultDisplay.innerHTML = "You win the game!"
       historyAdd.innerHTML += `
         <article>
           <h2>Round ${count}</h2>
+          <p>Computer played :${signNum}</p>
+          <p>Player played :${playerSign}</p>
           <p>Point for player</p>
           <h2>Player won the game</h2>
         </article><br><br>
@@ -122,6 +111,8 @@ const game = () => {
       historyAdd.innerHTML += `
         <article>
           <h2>Round ${count}</h2>
+          <p>Computer played :${signNum}</p>
+          <p>Playerer played :${playerSign}</p>
           <p>Point for player</p>
         </article><br>
       `
