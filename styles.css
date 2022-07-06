@@ -209,3 +209,12 @@ main .signs:hover{
   font-size: 25px;
   padding-top: 10px;
 }
+
+
+
+@media (max-width : 768px){
+  #loadingGif{
+    height: 163px;
+    top: 23%;
+  }
+}
