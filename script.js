@@ -145,7 +145,9 @@ document.querySelector('#rock').addEventListener('click', () => {
 // // let btnScissor = document.getElementById("scissor")
 // // btnScissor.addEventListener("click", game)
 
-// // loadingGif.style.display = 'none'
+const fn = () => {
+  loadingGif.style.display = 'none'
+}
 
 
 
@@ -161,7 +163,9 @@ possibles.forEach((possible) => possible.addEventListener('click', (sign) => {
     player === 3
   }
   // game()
+  loadingGif.style.display = 'initial'
   setTimeout(game,3000)
+  setTimeout(fn, 3000)
 }))
 
 // history
